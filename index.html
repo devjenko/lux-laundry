@@ -3,31 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <!--Website Icon-->
-    <link rel="icon" type="image/svg+xml"/>
+    <link rel="icon" href="./public/images/logo/lux-laundry-logo.svg" type="image/svg+xml"/>
+    <link rel="stylesheet" href="src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lux Laundry</title>
   </head>
   <body>
-    
-
-
-    <!-- HEADER   -->
+    <!--Announcement Bar-->
+    <div class=" bg-primary text-black p-2 ">
+      <div class="container mx-auto flex justify-between">
+        <p>Address Coming Soon</p>
+        <p>Contact No. Coming Soon</p>
+      </div>
+    </div>
+    <div class="container mx-auto">
+    <!--Header-->
     <header>
-      <nav>
+      <!--Navbar-->
+<div class="navbar bg-base-100 ">
+  <!--Nav Logo-->
+  <img class="object-contain h-20" src="public/images/logo/lux-laundry-logo.svg" alt="lux laundry logo">
 
-      </nav>
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li><a>About Us</a></li>
+        <li><a>Services</a></li>
+        <li><a>Pricing</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a>About Us</a></li>
+      <li><a>Services</a></li>
+      <li><a>Pricing</a></li>
+      <li><a>Contact</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <button id="language-button" onclick="changeLanguage()" class="btn">EN</button>
+  </div>
+</div>
     </header>
 
-    <!-- MAIN CONTENT -->
+    <!--Main-->
     <main>
+      <!--Hero-->
+      <section class="py-20">
+<div class="hero flex ">
+
+
+  
+  <!--Hero Text Content-->
+    <div>
+      <h1 class="text-4xl font-bold">Premium Laundry Services <br> Pickup &amp; Delivery</h1>
+      <p class="py-6">
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      </p>
+      <button class="btn bg-primary text-neutral">Get Started</button>
+    </div>
+
+      <!--Hero Image Content-->
+  <div class="hero-content flex-col lg:flex-row-reverse p-0 ">
+    <img
+      src="src/assets/images/hero/hero-img.png"
+      class=" max-w-3xl object-contain"
+    />
+
+  </div>
+
+
+  </div>
+</div>
+      </section>
     
-      </main>
+    </main>
 
 
-    <!-- FOOTER -->
+    <!--Footer-->
     <footer>
-      <p>&copy; 2026 Lux Laundry. All rights reserved.</p>
+      
     </footer>
+
+    
+  </div>
+
+  <!--Copyright-->
+  <div class="flex justify-center bg-[#D9D9D9]">
+    <p>&copy; 2026 Lux Laundry. All rights reserved.</p>
+  </div>
+
 
 
     <script type="module" src="/src/main.js"></script>
