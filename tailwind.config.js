@@ -12,6 +12,20 @@ export default {
         accent: '#EACE04',
         neutral: '#FFFFFF',
       },
+      fontSize:{
+        //14px
+        small:'0.875rem',
+        //18px
+        base:'1.125rem',
+        //28px
+        large:'1.75rem',
+        //60px
+        xlarge:'3.75rem',
+
+      },
+      fontWeight:{
+        
+      },
     },
   },
   plugins: [

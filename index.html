@@ -6,12 +6,15 @@
     <link rel="icon" href="./public/images/logo/lux-laundry-logo.svg" type="image/svg+xml"/>
     <link rel="stylesheet" href="src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Lux Laundry</title>
   </head>
   <body>
     <!--Announcement Bar-->
     <div class=" bg-primary text-black p-2 ">
-      <div class="container mx-auto flex justify-between">
+      <div class="container mx-auto flex justify-between text-base">
         <p>Address Coming Soon</p>
         <p>Contact No. Coming Soon</p>
       </div>
@@ -20,7 +23,7 @@
     <!--Header-->
     <header>
       <!--Navbar-->
-<div class="navbar bg-base-100 ">
+<div class="navbar bg-base-100">
   <!--Nav Logo-->
   <img class="object-contain h-20" src="public/images/logo/lux-laundry-logo.svg" alt="lux laundry logo">
 
@@ -40,7 +43,7 @@
     </div>
   </div>
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
+    <ul class="menu menu-horizontal px-1 text-base text-secondary">
       <li><a>About Us</a></li>
       <li><a>Services</a></li>
       <li><a>Pricing</a></li>
@@ -48,7 +51,7 @@
     </ul>
   </div>
   <div class="navbar-end">
-    <button id="language-button" onclick="changeLanguage()" class="btn">EN</button>
+    <button id="language-button" onclick="changeLanguage()" class="btn text-base text-secondary">EN</button>
   </div>
 </div>
     </header>
@@ -63,12 +66,14 @@
   
   <!--Hero Text Content-->
     <div>
-      <h1 class="text-4xl font-bold">Premium Laundry Services <br> Pickup &amp; Delivery</h1>
-      <p class="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      <h1 class="text-xlarge text-secondary">Premium Laundry Services <br> Pickup &amp; Delivery</h1>
+      <p class="py-6 text-base text-secondary">
+        THE BEST WAY TO DO YOUR LAUNDRY
       </p>
-      <button class="btn bg-primary text-neutral">Get Started</button>
+      <div class="flex flex-col md:flex-row ">
+        <button class="btn bg-primary text-base text-neutral w-1/2">Get Started</button>
+        <a href="#" class="text-base text-secondary underline m-auto">View Location</a>
+      </div>
     </div>
 
       <!--Hero Image Content-->
