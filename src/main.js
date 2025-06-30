@@ -1,32 +1,29 @@
 window.changeLanguage = changeLanguage;
 
 let languageButton = document.getElementById('language-button');
+let currentLanguage = 'en';
 
+function changeLanguage() {
+    const select = document.querySelector('.goog-te-combo');
+    if (!select) return;
 
-
-
-
-
-function changeLanguage(lang) {
- // Toggle the name on every click
-    if (languageButton.textContent === 'EN') {
+    if (currentLanguage === 'en') {
         languageButton.textContent = 'KH';
-        // Translate to Khmer using Google Translate URL
-        const currentUrl = encodeURIComponent(window.location.href);
-        const translateUrl = `https://translate.google.com/translate?sl=en&tl=km&u=${currentUrl}`;
-        window.location.href = translateUrl;
+        select.value = ''; // force reset
+        select.dispatchEvent(new Event('change'));
+        setTimeout(() => {
+            select.value = 'km';
+            select.dispatchEvent(new Event('change'));
+            currentLanguage = 'km';
+        }, 100);
     } else {
         languageButton.textContent = 'EN';
-        // Reload or go back to the original
-        if (window.location.href.includes('translate.google.com')) {
-            const urlParams = new URLSearchParams(window.location.search);
-            const originalUrl = urlParams.get('u');
-            if (originalUrl) {
-                window.location.href = decodeURIComponent(originalUrl);
-            } else {
-                window.location.reload();
-            }
-        }
+        select.value = ''; // force reset
+        select.dispatchEvent(new Event('change'));
+        setTimeout(() => {
+            select.value = 'en';
+            select.dispatchEvent(new Event('change'));
+            currentLanguage = 'en';
+        }, 100);
     }
-    
 }

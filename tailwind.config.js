@@ -24,7 +24,11 @@ export default {
 
       },
       fontWeight:{
-        
+        regular:'400',
+        bold:'700',
+      },
+      fontFamily:{
+        montserrat:['Montserrat', 'sans-serif'],
       },
     },
   },

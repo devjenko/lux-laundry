@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- Google translate API-->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }
+</script>
+
     <title>Lux Laundry</title>
   </head>
-  <body>
+  <body class="font-montserrat"> 
     <!--Announcement Bar-->
     <div class=" bg-primary text-black p-2 ">
-      <div class="container mx-auto flex justify-between text-base">
+      <div class="container mx-auto flex justify-between text-base font-regular">
         <p>Address Coming Soon</p>
         <p>Contact No. Coming Soon</p>
       </div>
@@ -23,9 +32,11 @@
     <!--Header-->
     <header>
       <!--Navbar-->
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-100 font-regular">
   <!--Nav Logo-->
-  <img class="object-contain h-20" src="public/images/logo/lux-laundry-logo.svg" alt="lux laundry logo">
+  <a href="#" class="">
+    <img  class="object-contain h-36 cursor-pointer" src="public/images/logo/lux-laundry-logo.svg" alt="lux laundry logo">
+  </a>
 
   <div class="navbar-start">
     <div class="dropdown">
@@ -51,7 +62,7 @@
     </ul>
   </div>
   <div class="navbar-end">
-    <button id="language-button" onclick="changeLanguage()" class="btn text-base text-secondary">EN</button>
+    <button id="language-button" onclick="changeLanguage()" class="btn text-base text-secondary notranslate font-regular">EN</button>
   </div>
 </div>
     </header>
@@ -59,28 +70,29 @@
     <!--Main-->
     <main>
       <!--Hero-->
-      <section class="py-20">
-<div class="hero flex ">
+      <section class="  md:py-16 lg:py-20">
+<div class="hero flex flex-col items-center    lg:flex-row text-center lg:text-start  ">
 
-
-  
   <!--Hero Text Content-->
     <div>
-      <h1 class="text-xlarge text-secondary">Premium Laundry Services <br> Pickup &amp; Delivery</h1>
-      <p class="py-6 text-base text-secondary">
+      <h1 class=" text-large lg:text-xlarge text-secondary font-bold ">Premium Laundry Services <br> Pickup &amp; Delivery</h1>
+      <p class="pb-6 text-large w-full  text-secondary font-regular">
         THE BEST WAY TO DO YOUR LAUNDRY
       </p>
-      <div class="flex flex-col md:flex-row ">
-        <button class="btn bg-primary text-base text-neutral w-1/2">Get Started</button>
-        <a href="#" class="text-base text-secondary underline m-auto">View Location</a>
+
+      <!--Button container-->
+      <div class="flex">
+        <button class="btn bg-primary text-base text-neutral w-1/2 font-regular">Pickup / Delivery</button>
+        <a href="#" class="text-base text-secondary underline m-auto font-regular">View Location</a>
       </div>
+
     </div>
 
       <!--Hero Image Content-->
-  <div class="hero-content flex-col lg:flex-row-reverse p-0 ">
+  <div class="hero-content justify-center items-center  flex-col p-0 ">
     <img
       src="src/assets/images/hero/hero-img.png"
-      class=" max-w-3xl object-contain"
+      class=" min-w-96 object-contain object-center"
     />
 
   </div>
@@ -107,7 +119,7 @@
   </div>
 
 
-
+    <div id="google_translate_element" style="display:none;"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
