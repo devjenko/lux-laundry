@@ -3,36 +3,49 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx,html}",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#00ACD0',
-        secondary: '#232240', 
-        accent: '#EACE04',
-        neutral: '#FFFFFF',
+        // dark blue
+        primary:'#00334C',
+        // light blue
+        secondary:'#D0F6FF',
+        // bright light blue
+        accent:'#21B7E2',
+        // white
+        neutral:'#F7FEFF',
+        //grey
+        grey:'#263238',
       },
       fontSize:{
         //14px
-        small:'0.875rem',
+        xsmall:'0.875rem',
         //18px
-        base:'1.125rem',
-        //28px
-        large:'1.75rem',
+        small:'1.125rem',
+        //22px
+        base:'1.375rem',
+        //25px
+        medium:'1.5625rem',
+        //30px
+        large:'1.875rem',
         //60px
         xlarge:'3.75rem',
 
       },
       fontWeight:{
         regular:'400',
-        bold:'700',
+        bold:'600',
       },
       fontFamily:{
-        montserrat:['Montserrat', 'sans-serif'],
+        grandstander:['grandstander', 'sans-serif'],
+        inter:['inter', 'sans-serif'],
+        outfit:['outfit', 'sans-serif'],
       },
     },
   },
   plugins: [
-    require('daisyui'),
+    require('flowbite/plugin'),
   ],
 }
