@@ -37,9 +37,9 @@
   <body class=" md:container mx-auto  ">
     <header>
       <!-- Navbar -->
-      <nav class=" bg-white md:bg-neutral border-gray-200">
+      <nav class="  bg-white md:bg-neutral border-gray-200">
         <div
-          class="max-w-screen-xl  flex flex-wrap items-center justify-between px-6  py-2"
+          class="  flex flex-wrap items-center justify-between px-6  py-2"
         >
           <!-- Nav Logo-->
           <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -72,35 +72,35 @@
           </button>
 
           <!--Mobile menu-->
-          <div class="mobile-menu w-full font-outfit md:block md:w-auto" id="navbar-default">
+          <div class="mobile-menu   w-full font-outfit md:block md:w-auto" id="navbar-default">
             <ul
               class=" font-regular  flex justify-center items-center flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   text-grey "
             >
               <li>
                 <a
                   href="#"
-                  class="block  py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 "
+                  class="block  py-2 px-3 rounded-sm hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 "
                   >How it works</a
                 >
               </li>
                             <li>
                 <a
                   href="#"
-                  class="block  py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 "
+                  class="block  py-2 px-3 rounded-sm hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 "
                   >Services</a
                 >
               </li>
                             <li>
                 <a
                   href="#"
-                  class="block  py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 "
+                  class="block  py-2 px-3 rounded-sm hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 "
                   >Location</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="block  py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 "
+                  class="block  py-2 px-3 rounded-sm hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 "
                   >Contact us</a
                 >
                         </li>
@@ -109,21 +109,16 @@
           </div>
         </div>
       </nav>
-      <script>
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark')
-    }
-</script>
+      
+
     </header>
 
     <main>
       <!-- Hero -->
-      <section class="bg-neutral text-center p-6 ">
+      <section class="bg-neutral text-center lg:text-start p-6  ">
+        
         <div
-          class="grid max-w-screen-xl  py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+          class="grid justify-center  py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
         >
         <div class="mr-auto place-self-center lg:col-span-7">
             <!--Announcement banner -->
@@ -143,13 +138,13 @@
               </svg>
             </a>
             <h1
-              class="max-w-2xl mb-5 font-regular text-large text-center font-grandstander text-primary "
+              class=" mb-5 font-regular text-large text-center lg:text-start font-grandstander text-primary "
             >
               Laundry today, <br />
               Fresh tomorrow.
             </h1>
             <p
-              class="max-w-2xl mb-8 font-semiBold font-inter text-primary lg:mb-8 md:text-lg lg:text-xl "
+              class=" mb-8 font-semiBold font-inter text-primary lg:mb-8 md:text-lg lg:text-xl "
             >
               Lux Laundry service will wash, dry, steam, and fold your laundry
               at an affordable price. Delivery options available!
@@ -157,39 +152,45 @@
 
             <a
               href="#"
-              class="inline-flex items-center justify-center px-7 py-3 mb-8  font-semiBold text-small text-center text-black bg-secondary rounded-full font-outfit"
+              class="inline-flex items-center justify-center px-7 py-3 mb-8  font-semiBold text-small text-center text-black bg-secondary rounded-full font-outfit lg:w-80"
             >
               How it works
             </a>
-            <div class="flex justify-evenly mb-8 font-inter">
-              <div class="flex flex-col">
-                <h3 class="text-large font-bold ">12m&plus;</h3>
-                <p class="text-accent text-xsmall font-regular ">Happy Customers</p>
+
+            <div class="flex justify-evenly lg:justify-normal lg:gap-12 mb-8 font-inter">
+
+              
+              <div class="flex flex-col lg:flex-row lg:justify-center lg:items-center">
+                <h3 class="text-large font-bold lg:p-2">12m&plus;</h3>
+                <p class="text-accent text-xsmall font-regular ">Happy <br class="hidden lg:block"> Customers</p>
               </div>
-                        <div class="flex flex-col">
-                <h3 class="text-large font-bold ">10&plus;</h3>
-                <p class="text-accent text-xsmall font-regular">Years of Experience</p>
-              </div>
-            </div>
+              
+              <div class="flex flex-col lg:flex-row lg:justify-center lg:items-center">
+                <h3 class="text-large font-bold lg:p-2">10&plus;</h3>
+                <p class="text-accent text-xsmall font-regular ">Years of <br class="hidden lg:block">  Experience</p>
+              </div>            
+
+
+
           </div>
 
-          <!--Hero Image-->
-          <div class=" m-auto w-60  object-contain object-center  lg:mt-0 lg:col-span-5 lg:flex  ">
-            <!--TODO: Fix the shape changing position on different screen sizes -->
-            <!-- <div class="bg-secondary w-[700px] h-[350px] rounded-full absolute  left-1/2 top-1/2 -translate-x-1/3 -translate-y-32"></div> -->
-            <img class=" relative"
-              src="src/assets/images/hero/washing-machine.png"
-              alt="A washing machine"
-            />
-          </div>
+        </div>
+        <!--Hero Image-->
+        <div class=" flex justify-center items-center w-60 lg:w-full m-auto  object-contain object-center  lg:mt-0 lg:col-span-5 lg:flex  ">
+          <!--TODO: Fix the shape changing position on different screen sizes -->
+          <!-- <div class="bg-secondary w-[700px] h-[350px] rounded-full absolute  left-1/2 top-1/2 -translate-x-1/3 -translate-y-32"></div> -->
+          <img class=" relative"
+            src="src/assets/images/hero/washing-machine.png"
+            alt="A washing machine"
+          />
         </div>
       </section>
 
       <!--How it works section-->
 <section class="bg-secondary font-outfit flex justify-center p-6">
 
-  <div class=" max-w-screen-xl text-center lg:py-16 lg:px-6">
-      <div class="mx-auto mb-12 mt-6  max-w-screen-sm lg:mb-16">
+  <div class="  text-center lg:py-16 lg:px-6">
+      <div class="mx-auto mb-12 mt-6   lg:mb-16">
         <h3 class="font-regular text-accent font-grandstander ">HOW IT WORKS</h3>
           <h2 class=" text-4xl   font-semiBold text-gray-900 ">Get it done in 4 steps </h2>
       </div> 
@@ -204,7 +205,7 @@
             <h3 class=" text-large font-semiBold  text-gray-900 ">
               Drop off
             </h3>
-            <img class="mx-auto mb-4 w-[250px] h-[250px]  object-contain" src="src/assets/images/how-it-works/how-it-works-card1.svg" alt="A man going walking to an address">
+            <img class="mx-auto  w-[250px] h-[250px]  object-contain" src="src/assets/images/how-it-works/how-it-works-card1.svg" alt="A man going walking to an address">
              
           </div>
 
@@ -215,7 +216,7 @@
             <h3 class=" text-large font-semiBold  text-gray-900 ">
               Wash & Dry
             </h3>
-            <img class="mx-auto mb-4 w-[250px] h-[250px]  object-contain" src="src/assets/images/how-it-works/how-it-works-card2.svg" alt="A man going walking to an address">
+            <img class="mx-auto  w-[250px] h-[250px]  object-contain" src="src/assets/images/how-it-works/how-it-works-card2.svg" alt="A man going walking to an address">
              
           </div>
           
@@ -226,7 +227,7 @@
             <h3 class=" text-large font-semiBold  text-gray-900 ">
               Fold
             </h3>
-            <img class="mx-auto mb-4 w-[250px] h-[250px]  object-contain" src="src/assets/images/how-it-works/how-it-works-card3.svg" alt="A man going walking to an address">
+            <img class="mx-auto  w-[250px] h-[250px]  object-contain" src="src/assets/images/how-it-works/how-it-works-card3.svg" alt="A man going walking to an address">
              
           </div>
 
@@ -238,7 +239,7 @@
             <h3 class=" text-large font-semiBold  text-gray-900 ">
               Delivery
             </h3>
-            <img class="mx-auto mb-4 w-[250px] h-[250px]  object-contain" src="src/assets/images/how-it-works/how-it-works-card4.svg" alt="A man going walking to an address">
+            <img class="mx-auto  w-[250px] h-[250px]  object-contain" src="src/assets/images/how-it-works/how-it-works-card4.svg" alt="A man going walking to an address">
              
           </div>
 
@@ -267,7 +268,7 @@
 
 
 <footer class="!bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <div class="w-full  mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                 <img
