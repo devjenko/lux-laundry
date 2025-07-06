@@ -16,7 +16,7 @@
 
 /* Hamburger menu cross animation */
 .hamburger-icon.open .hamburger-line-1 {
-  transform: translateY(6px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger-icon.open .hamburger-line-2 {
@@ -24,7 +24,7 @@
 }
 
 .hamburger-icon.open .hamburger-line-3 {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Mobile menu dropdown animation */
