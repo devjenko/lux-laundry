@@ -1,6 +1,8 @@
 import 'flowbite';
 import { initTWE, Collapse } from 'tw-elements';
 
+
+
 // Initialize components after DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
   // Initialize Tailwind Elements
@@ -55,8 +57,59 @@ document.addEventListener('DOMContentLoaded', function () {
         burgerButton.setAttribute('aria-expanded', false);
       }
     });
+
+    // Close menu after clicking nav link and handle smooth scrolling with offset
+    const navLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        
+        // Only handle internal links (starting with #)
+        if (href && href.startsWith('#') && href !== '#') {
+          e.preventDefault();
+          
+          // Close menu if open
+          if (isOpen) {
+            isOpen = false;
+            hamburgerIcon.classList.remove('open');
+            mobileMenu.classList.remove('open');
+            burgerButton.setAttribute('aria-expanded', false);
+          }
+          
+          // Find the target section
+          const targetId = href.substring(1);
+          const targetSection = document.getElementById(targetId);
+          
+          if (targetSection) {
+            // Get header height for offset
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            
+            // Calculate position with offset
+            const targetPosition = targetSection.offsetTop - headerHeight - 20; // 20px extra padding
+            
+            // Smooth scroll to position
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        } else {
+          // For non-internal links, just close the menu
+          if (isOpen) {
+            isOpen = false;
+            hamburgerIcon.classList.remove('open');
+            mobileMenu.classList.remove('open');
+            burgerButton.setAttribute('aria-expanded', false);
+          }
+        }
+      });
+    });
   }
 });
+
+
+var themeToggleBtn = document.getElementById('theme-toggle');
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
@@ -70,8 +123,6 @@ if (
 } else {
   themeToggleDarkIcon.classList.remove('hidden');
 }
-
-var themeToggleBtn = document.getElementById('theme-toggle');
 
 themeToggleBtn.addEventListener('click', function () {
   // toggle icons inside button
@@ -99,3 +150,4 @@ themeToggleBtn.addEventListener('click', function () {
     }
   }
 });
+
