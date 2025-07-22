@@ -109,45 +109,105 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Theme toggle functionality (only if elements exist)
 var themeToggleBtn = document.getElementById('theme-toggle');
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-// Change the icons inside the button based on previous settings
-if (
-  localStorage.getItem('color-theme') === 'dark' ||
-  (!('color-theme' in localStorage) &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches)
-) {
-  themeToggleLightIcon.classList.remove('hidden');
-} else {
-  themeToggleDarkIcon.classList.remove('hidden');
+// Only run theme toggle code if all elements exist
+if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
+  // Change the icons inside the button based on previous settings
+  if (
+    localStorage.getItem('color-theme') === 'dark' ||
+    (!('color-theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    themeToggleLightIcon.classList.remove('hidden');
+  } else {
+    themeToggleDarkIcon.classList.remove('hidden');
+  }
+
+  themeToggleBtn.addEventListener('click', function () {
+    // toggle icons inside button
+    themeToggleDarkIcon.classList.toggle('hidden');
+    themeToggleLightIcon.classList.toggle('hidden');
+
+    // if set via local storage previously
+    if (localStorage.getItem('color-theme')) {
+      if (localStorage.getItem('color-theme') === 'light') {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      }
+
+      // if NOT set via local storage previously
+    } else {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    }
+  });
 }
 
-themeToggleBtn.addEventListener('click', function () {
-  // toggle icons inside button
-  themeToggleDarkIcon.classList.toggle('hidden');
-  themeToggleLightIcon.classList.toggle('hidden');
 
-  // if set via local storage previously
-  if (localStorage.getItem('color-theme')) {
-    if (localStorage.getItem('color-theme') === 'light') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('color-theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('color-theme', 'light');
-    }
-
-    // if NOT set via local storage previously
-  } else {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('color-theme', 'light');
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('color-theme', 'dark');
-    }
+// Nav exit and appear animation when scrolling
+document.addEventListener('DOMContentLoaded', function() {
+  const navBar = document.getElementById('navbar');
+  const mobileMenu = document.getElementById('navbar-default');
+  console.log('Navbar element:', navBar); // Debug log
+  
+  if (!navBar) {
+    console.error('Navbar element not found!');
+    return;
   }
+  
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateNavbar() {
+    const currentScrollY = window.scrollY;
+    console.log('Scroll Y:', currentScrollY, 'Last:', lastScrollY); // Debug log
+    
+    // Check if mobile menu is open (has 'open' class)
+    const isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains('open');
+    
+    // Don't hide navbar if mobile menu is open
+    if (isMobileMenuOpen) {
+      console.log('Mobile menu is open, skipping navbar animation');
+      lastScrollY = currentScrollY;
+      ticking = false;
+      return;
+    }
+    
+    // Only hide navbar when scrolling down and past a certain threshold
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Scrolling down - hide navbar
+      console.log('Adding -translate-y-full'); // Debug log
+      navBar.classList.add('-translate-y-full');
+    } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
+      // Scrolling up or at top - show navbar
+      console.log('Removing -translate-y-full'); // Debug log
+      navBar.classList.remove('-translate-y-full');
+    }
+    
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(updateNavbar);
+      ticking = true;
+    }
+  });
 });
+
+
+
 
