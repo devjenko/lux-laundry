@@ -2,17 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   ul li a:hover {
     @apply font-semiBold;
     @apply transition-all duration-150 ease-in-out;
-  
   }
 }
-
-
 
 /* Hamburger menu cross animation */
 .hamburger-icon.open .hamburger-line-1 {
@@ -54,6 +49,3 @@
     transform: none !important;
   }
 }
-
-
-
