@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth overflow-x-hidden" lang="en">
   <head>
     <meta charset="UTF-8" />
     <!--Website Icon-->
@@ -218,7 +218,7 @@
             <h3 class="font-regular text-accent font-grandstander">
               HOW IT WORKS
             </h3>
-            <h2 class="text-4xl font-semiBold text-gray-900">
+            <h2 class="text-large font-semiBold text-grey">
               Get it done in 4 steps
             </h2>
           </div>
@@ -234,7 +234,7 @@
               <p class="font-grandstander text-base text-accent font-regular">
                 STEP 1
               </p>
-              <h3 class="text-large font-semiBold text-gray-900">Drop off</h3>
+              <h3 class="text-large font-semiBold text-grey">Drop off</h3>
               <img
                 class="mx-auto w-[250px] h-[250px] object-contain"
                 src="src/assets/images/how-it-works/how-it-works-card1.svg"
@@ -249,7 +249,7 @@
               <p class="font-grandstander text-base text-accent font-regular">
                 STEP 2
               </p>
-              <h3 class="text-large font-semiBold text-gray-900">Wash & Dry</h3>
+              <h3 class="text-large font-semiBold text-grey">Wash & Dry</h3>
               <img
                 class="mx-auto w-[250px] h-[250px] object-contain"
                 src="src/assets/images/how-it-works/how-it-works-card2.svg"
@@ -264,7 +264,7 @@
               <p class="font-grandstander text-base text-accent font-regular">
                 STEP 3
               </p>
-              <h3 class="text-large font-semiBold text-gray-900">Fold</h3>
+              <h3 class="text-large font-semiBold text-grey">Fold</h3>
               <img
                 class="mx-auto w-[250px] h-[250px] object-contain"
                 src="src/assets/images/how-it-works/how-it-works-card3.svg"
@@ -279,7 +279,7 @@
               <p class="font-grandstander text-base text-accent font-regular">
                 STEP 4
               </p>
-              <h3 class="text-large font-semiBold text-gray-900">Delivery</h3>
+              <h3 class="text-large font-semiBold text-grey">Delivery</h3>
               <img
                 class="mx-auto w-[250px] h-[250px] object-contain"
                 src="src/assets/images/how-it-works/how-it-works-card4.svg"
@@ -300,7 +300,7 @@
             >
               Services
             </h2>
-            <h2 class="mb-5 font-bold text-gray text-3xl">
+            <h2 class="mb-5 font-bold text-grey text-large">
               Services & Packages
             </h2>
           </div>
@@ -488,7 +488,7 @@
 
             <!-- Pricing Card 3-->
             <div
-              class="group flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow hover:shadow-lg hover:-translate-y-5 transition-all duration-300 hover:bg-secondary"
+              class="group flex flex-col p-6 mx-auto max-w-lg text-center text-grey bg-white rounded-lg border border-gray-100 shadow hover:shadow-lg hover:-translate-y-5 transition-all duration-300 hover:bg-secondary"
             >
               <h3 class="mb-4 text-2xl font-grandstander text-accent">
                 FAMILY SIZE
@@ -603,18 +603,26 @@
       <!--Final CTA Section-->
       <section class="p-6">
         <div class="md:container mx-auto">
-          <div class="lg:flex bg-secondary rounded-3xl p-4 lg:rounded-[120px]">
+          <div
+            class="block xl:flex p-6 xl:p-20 bg-secondary rounded-3xl lg:rounded-[120px]"
+          >
             <!--Img container-->
-            <div class=" w-64 h-64 lg:w-[500px] lg:h-[500px] m-auto mb-4 ">
+            <div
+              class="xl:relative xl:w-[50%] m-auto mb-4 lg:mb-0 flex items-center justify-center xl:justify-normal"
+            >
               <img
-                class="object-contain "
+                class="object-contain w-64 lg:w-[300px] xl:w-[500px] xl:h-[500px] xl:absolute lg:bottom-[-50px]"
                 src="src/assets/images/cta/final-cta-thinking-face.svg"
                 alt="a woman thinking"
               />
             </div>
             <!--Text container-->
-            <div class="flex flex-col ">
-              <h2 class="mb-4 font-bold text-gray text-3xl text-center ">
+            <div
+              class="flex xl:w-[50%] justify-center items-center flex-col m-auto"
+            >
+              <h2
+                class="mb-4 font-bold text-grey text-center text-large xl:text-xlarge"
+              >
                 Hard time deciding what&CloseCurlyQuote;s best for you?
               </h2>
               <a
@@ -628,12 +636,13 @@
         </div>
       </section>
 
-      <footer class="!bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
-        <div class="w-full mx-auto p-4 md:py-8">
-          <div class="sm:flex sm:items-center sm:justify-between">
+      <!--Footer-->
+      <footer class="bg-secondary p-6">
+        <div class="md:container m-auto">
+          <div class="lg:flex justify-between">
             <a
               href="#"
-              class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+              class="flex m-auto lg:m-0 justify-center items-center space-x-3 rtl:space-x-reverse"
             >
               <img
                 src="/public/images/logo/lux-laundry-logo.png"
@@ -645,7 +654,7 @@
               >
             </a>
             <ul
-              class="flex flex-wrap items-center mb-6 text-sm font-medium font-inter text-grey sm:mb-0"
+              class="flex justify-center items-center p-6 text-sm font-medium font-inter text-grey sm:mb-0"
             >
               <li>
                 <a href="#how-it-works" class="hover:underline me-4 md:me-6"
@@ -667,8 +676,9 @@
               </li>
             </ul>
           </div>
-          <hr class="my-6 border-grey sm:mx-auto lg:my-8" />
-          <span class="block text-sm text-grey sm:text-center font-inter"
+          <hr class="border-grey" />
+          <span
+            class="p-6 block text-center text-sm text-grey sm:text-center font-inter"
             >© 2026 <a href="#" class="hover:underline"> Lux Laundry™</a>. All
             Rights Reserved.</span
           >
