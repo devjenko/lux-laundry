@@ -43,6 +43,7 @@ export default {
         grandstander: ["grandstander", "sans-serif"],
         inter: ["inter", "sans-serif"],
         outfit: ["outfit", "sans-serif"],
+        rasa: ["rasa", "sans-serif"],
       },
     },
   },
