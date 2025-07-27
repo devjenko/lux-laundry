@@ -152,23 +152,45 @@ if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
   });
 }
 
-// Nav exit and appear animation when scrolling
+// Nav exit and appear animation when scrolling - Small screens only
 document.addEventListener("DOMContentLoaded", function () {
   const navBar = document.getElementById("navbar");
   const mobileMenu = document.getElementById("navbar-default");
-  console.log("Navbar element:", navBar); // Debug log
-
-  if (!navBar) {
-    console.error("Navbar element not found!");
-    return;
-  }
 
   let lastScrollY = window.scrollY;
   let ticking = false;
 
+  // Check if screen is smaller than lg breakpoint (1024px)
+  const isSmallScreen = () => {
+    return window.matchMedia("(max-width: 1023px)").matches;
+  };
+
   function updateNavbar() {
+    // Only run on small screens
+    if (isSmallScreen()) {
+      navBar.classList.add("bg-white");
+    } else {
+      // On large screens, ensure navbar is visible and has proper background
+      navBar.classList.remove("-translate-y-full");
+      navBar.classList.remove("bg-white");
+      navBar.classList.add("bg-neutral");
+
+      // Change the background color of the nav to white when scrolling down and back to neutral at the top of the page
+      if (window.scrollY > 30) {
+        navBar.classList.remove(
+          "lg:bg-neutral",
+          "opacity-[99%]",
+          "lg:shadow-none"
+        );
+        navBar.classList.add("bg-white");
+      } else {
+        navBar.classList.add("lg:shadow-none");
+      }
+      ticking = false;
+      return;
+    }
+
     const currentScrollY = window.scrollY;
-    console.log("Scroll Y:", currentScrollY, "Last:", lastScrollY); // Debug log
 
     // Check if mobile menu is open (has 'open' class)
     const isMobileMenuOpen =
@@ -176,20 +198,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Don't hide navbar if mobile menu is open
     if (isMobileMenuOpen) {
-      console.log("Mobile menu is open, skipping navbar animation");
       lastScrollY = currentScrollY;
       ticking = false;
       return;
     }
 
-    // Only hide navbar when scrolling down and past a certain threshold
+    // Only hide navbar when scrolling down and past a certain threshold. For smaller screen sizes only
     if (currentScrollY > lastScrollY && currentScrollY > 100) {
       // Scrolling down - hide navbar
-      console.log("Adding -translate-y-full"); // Debug log
       navBar.classList.add("-translate-y-full");
     } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
       // Scrolling up or at top - show navbar
-      console.log("Removing -translate-y-full"); // Debug log
       navBar.classList.remove("-translate-y-full");
     }
 
@@ -203,4 +222,24 @@ document.addEventListener("DOMContentLoaded", function () {
       ticking = true;
     }
   });
+
+  // Handle screen size changes
+  window.addEventListener("resize", function () {
+    if (!isSmallScreen()) {
+      // Reset navbar state for large screens
+      navBar.classList.remove("-translate-y-full");
+    }
+  });
+
+  // Initial check
+  if (!isSmallScreen()) {
+    navBar.classList.remove("-translate-y-full");
+  }
+});
+
+window.addEventListener("scroll", function () {
+  if (!ticking) {
+    requestAnimationFrame(updateNavbar);
+    ticking = true;
+  }
 });
