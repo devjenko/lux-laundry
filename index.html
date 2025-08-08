@@ -44,7 +44,7 @@
       <!-- Navbar -->
       <nav
         id="navbar"
-        class="opacity-[99%] bg-white lg:bg-neutral shadow-sm lg:shadow-none border-gray-200 p-6 transform transition-all ease-linear duration-150"
+        class="opacity-[99%] bg-white lg:bg-neutral shadow-sm lg:shadow-none border-gray-200 p-6 transform transition-all ease-in-out duration-115 xl:pt-10"
       >
         <div
           class="md:container mx-auto flex flex-wrap items-center justify-between md:p-0"
@@ -147,7 +147,7 @@
                   >20&percnt; Discount for 1 Month subscription</span
                 >
                 <svg
-                  class="w-4 h-4 ml-2"
+                  class="w-4 h-4 ml-1"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -160,20 +160,20 @@
                 </svg>
               </a>
               <h1
-                class="mb-5 font-[300] text-large xl:text-xlarge text-center lg:text-start font-grandstander text-primary"
+                class="mb-5 font-[300] text-larger md:text-largest xl:text-xlarge text-center lg:text-start font-grandstander text-primary"
               >
                 Laundry today, <br />
                 Fresh tomorrow.
               </h1>
               <p
-                class="mb-12 xl:text-small font-semiBold font-inter text-primary"
+                class="mb-12 md:text-small text-xsmall font-semiBold font-inter text-primary"
               >
                 Lux Laundry service will wash, dry, steam, and fold your <br />
                 laundry at an affordable price. Delivery options available!
               </p>
               <a
                 href="#"
-                class="inline-flex items-center justify-center px-7 py-3 mb-8 font-semiBold text-base text-center text-black bg-secondary rounded-full font-outfit lg:w-80"
+                class="inline-flex items-center justify-center px-7 py-3 mb-8 font-semiBold text-small md:text-base text-center text-black bg-secondary rounded-full font-outfit lg:w-80"
               >
                 How it works
               </a>
@@ -183,7 +183,9 @@
                 <div
                   class="flex flex-col lg:flex-row lg:justify-center lg:items-center"
                 >
-                  <h3 class="text-[50px] font-rasa font-bold lg:p-2">
+                  <h3
+                    class="text-[30px] md:text-[37.5px] lg:text-[50px] font-rasa font-bold lg:p-2 h-9 md:h-11 lg:h-auto"
+                  >
                     12m&plus;
                   </h3>
                   <p class="text-accent text-xsmall font-regular">
@@ -195,7 +197,9 @@
                 <div
                   class="flex flex-col lg:flex-row lg:justify-center lg:items-center"
                 >
-                  <h3 class="text-[50px] font-rasa font-bold lg:p-2">
+                  <h3
+                    class="text-[30px] md:text-[37.5px] lg:text-[50px] font-rasa font-bold lg:p-2 h-9 md:h-11 lg:h-auto"
+                  >
                     10&plus;
                   </h3>
                   <p class="text-accent text-xsmall font-regular">
@@ -207,10 +211,10 @@
             </div>
             <!--Hero Image-->
             <div
-              class="flex justify-end items-center w-60 lg:w-full m-auto lg:m-0 object-cover object-center lg:mt-0 lg:col-span-5"
+              class="flex justify-end items-center w-60 lg:w-full m-auto mt-14 lg:m-0 object-cover object-center lg:col-span-5"
             >
               <img
-                class="relative xl:w-[400px] w-[300px]"
+                class="relative xl:w-[350px] w-[300px]"
                 src="src/assets/images/hero/washing-machine.png"
                 alt="A washing machine"
               />
@@ -322,21 +326,21 @@
       <!--Services section-->
 
       <section id="services" class="bg-neutral font-outfit p-6">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-          <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+        <div class="mx-auto max-w-screen-xl lg:p-4">
+          <div class="mx-auto max-w-screen-md text-center mb-12 lg:mb-16">
             <h2
-              class="mb-4 text-base tracking-tight font-light font-grandstander text-accent"
+              class="font-regular xl:text-medium text-accent font-grandstander"
             >
-              Services
+              SERVICES
             </h2>
-            <h2 class="mb-5 font-bold text-grey text-xlarge">
+            <h2 class="xl:text-xlarge font-semiBold text-grey">
               Services & Packages
             </h2>
           </div>
 
           <!--Card Container-->
           <div
-            class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 lg:gap-12 gap-6 xl:gap-6"
+            class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 lg:gap-12 gap-6 xl:gap-6 lg:mb-[34px]"
           >
             <!-- Pricing Card 1-->
             <div
@@ -779,7 +783,7 @@
       </section>
     </main>
     <!--Footer-->
-    <footer class="bg-white p-6">
+    <footer class="bg-white p-6 xl:pb-10">
       <div class="md:container m-auto">
         <div class="lg:flex justify-between">
           <a
@@ -793,7 +797,6 @@
             />
             <span class="text-base font-regular font-grandstander text-accent"
               >Lux Laundry™</span
-            
             >
           </a>
           <ul
@@ -803,13 +806,11 @@
               <a href="#how-it-works" class="hover:underline me-4 md:me-6"
                 >How it works</a
               >
-              
             </li>
             <li>
               <a href="#services" class="hover:underline me-4 md:me-6"
                 >Services</a
               >
-              
             </li>
             <li>
               <a href="#location" class="hover:underline me-4 md:me-6"

@@ -180,11 +180,12 @@ document.addEventListener("DOMContentLoaded", function () {
         navBar.classList.remove(
           "lg:bg-neutral",
           "opacity-[99%]",
-          "lg:shadow-none"
+          "lg:shadow-none",
+          "xl:pt-10"
         );
         navBar.classList.add("bg-white");
       } else {
-        navBar.classList.add("lg:shadow-none");
+        navBar.classList.add("lg:shadow-none", "xl:pt-10");
       }
       ticking = false;
       return;

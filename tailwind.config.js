@@ -31,6 +31,10 @@ export default {
         medium: "1.5625rem",
         //30px
         large: "1.875rem",
+        //36px
+        larger: "2.25rem",
+        //45px
+        largest:"2.813rem",
         //60px
         xlarge: "3.75rem",
       },
