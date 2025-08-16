@@ -21,6 +21,8 @@ export default {
         grey: "#263238",
       },
       fontSize: {
+        //12px
+        tiny: "0.8rem",
         //14px
         xsmall: "0.875rem",
         //18px
@@ -34,7 +36,7 @@ export default {
         //36px
         larger: "2.25rem",
         //45px
-        largest:"2.813rem",
+        largest: "2.813rem",
         //60px
         xlarge: "3.75rem",
       },
