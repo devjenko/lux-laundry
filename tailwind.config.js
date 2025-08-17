@@ -59,9 +59,9 @@ export default {
         },
       },
       animation: {
-        "rotate-tr": "rotate-tr 70s linear infinite both",
-        "rotate-tr-rev": "rotate-tr 80s linear infinite both reverse",
-        "rotate-tr-rev2": "rotate-tr 100s linear infinite both reverse",
+        "rotate-tr": "rotate-tr 60s linear infinite both",
+        "rotate-tr-rev": "rotate-tr 70s linear infinite both reverse",
+        "rotate-tr-rev2": "rotate-tr 90s linear infinite both reverse",
       },
     },
   },
