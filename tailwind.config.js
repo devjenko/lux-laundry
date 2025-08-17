@@ -51,6 +51,18 @@ export default {
         outfit: ["outfit", "sans-serif"],
         rasa: ["rasa", "sans-serif"],
       },
+
+      keyframes: {
+        "rotate-tr": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" }, // full rotation
+        },
+      },
+      animation: {
+        "rotate-tr": "rotate-tr 70s linear infinite both",
+        "rotate-tr-rev": "rotate-tr 80s linear infinite both reverse",
+        "rotate-tr-rev2": "rotate-tr 100s linear infinite both reverse",
+      },
     },
   },
   plugins: [require("flowbite/plugin"), require("tw-elements/plugin.cjs")],
