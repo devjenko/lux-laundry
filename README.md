@@ -1,13 +1,16 @@
-# Lux Laundry™ Landing Page
+# <h1 align="center">Lux Laundry™ Landing Page</h1>
 
-A modern, responsive landing page for a premium laundry service built with HTML, Tailwind CSS, and JavaScript.
-
-##
-
-![Navigating success made beautifully easy (1)](https://github.com/user-attachments/assets/57316cea-df1e-489b-9dfc-f6ab149d8c3e)
+<p align="center">A modern, responsive landing page for a premium laundry service built with HTML, Tailwind CSS, and JavaScript.</p>
 
 
-##
+
+<div align="center">
+
+  ![Navigating success made beautifully easy (2)](https://github.com/user-attachments/assets/24bed81e-081d-4cc2-9836-ceab60b36ff3)
+
+</div>
+
+
 
 ## 🧺 Features
 
