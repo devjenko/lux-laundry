@@ -32,7 +32,7 @@
 - JavaScript (Vanilla)
 - Google Fonts
 - Flowbite Components
-- TW Elements
+
 
 ## 📱 Browser Support
 
