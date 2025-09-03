@@ -4,7 +4,10 @@ A modern, responsive landing page for a premium laundry service built with HTML,
 
 ##
 
-https://www.canva.com/design/DAGx5s8ODpM/B467QHRdlUYIc83dLVpxMg/edit?utm_content=DAGx5s8ODpM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+![Navigating success made beautifully easy (1)](https://github.com/user-attachments/assets/57316cea-df1e-489b-9dfc-f6ab149d8c3e)
+
+
+##
 
 ## 🧺 Features
 
