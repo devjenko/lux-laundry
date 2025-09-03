@@ -41,6 +41,11 @@
 - Safari (latest)
 - Edge (latest)
 
+
+## ✍ Figma Design
+
+https://www.figma.com/design/kW3NkL8WZW0LFp9CkVd9A7/Laundry-service-website--Community-?node-id=2-1203&m=dev
+
 ## 🚀 Getting Started
 
 ### Prerequisites
