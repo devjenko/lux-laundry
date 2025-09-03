@@ -1,4 +1,4 @@
-# <h1 align="center">Lux Laundry™ Landing Page</h1>
+ <h1 align="center">Lux Laundry™ Landing Page</h1>
 
 <p align="center">A modern, responsive landing page for a premium laundry service built with HTML, Tailwind CSS, and JavaScript.</p>
 
