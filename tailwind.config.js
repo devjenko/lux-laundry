@@ -53,15 +53,62 @@ export default {
       },
 
       keyframes: {
-        "rotate-tr": {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" }, // full rotation
+        "bubble-float-1": {
+          "0%": { 
+            transform: "translateY(0px) translateX(-30px) rotate(0deg) scale(1)"
+          },
+          "25%": {
+            transform: "translateY(-40px) translateX(50px) rotate(90deg) scale(1.1)"
+          },
+          "50%": {
+            transform: "translateY(-80px) translateX(-20px) rotate(180deg) scale(0.9)"
+          },
+          "75%": {
+            transform: "translateY(-40px) translateX(70px) rotate(270deg) scale(1.05)"
+          },
+          "100%": {
+            transform: "translateY(0px) translateX(-30px) rotate(360deg) scale(1)"
+          }
         },
+        "bubble-float-2": {
+          "0%": { 
+            transform: "translateY(20px) translateX(60px) rotate(0deg) scale(0.8)"
+          },
+          "33%": {
+            transform: "translateY(-50px) translateX(-40px) rotate(120deg) scale(1.2)"
+          },
+          "66%": {
+            transform: "translateY(-20px) translateX(80px) rotate(240deg) scale(0.9)"
+          },
+          "100%": {
+            transform: "translateY(20px) translateX(60px) rotate(360deg) scale(0.8)"
+          }
+        },
+        "bubble-float-3": {
+          "0%": { 
+            transform: "translateY(-10px) translateX(-50px) rotate(0deg) scale(1.1)"
+          },
+          "20%": {
+            transform: "translateY(-60px) translateX(30px) rotate(72deg) scale(0.85)"
+          },
+          "40%": {
+            transform: "translateY(-100px) translateX(-30px) rotate(144deg) scale(1.15)"
+          },
+          "60%": {
+            transform: "translateY(-50px) translateX(90px) rotate(216deg) scale(0.95)"
+          },
+          "80%": {
+            transform: "translateY(-20px) translateX(-20px) rotate(288deg) scale(1.05)"
+          },
+          "100%": {
+            transform: "translateY(-10px) translateX(-50px) rotate(360deg) scale(1.1)"
+          }
+        }
       },
       animation: {
-        "rotate-tr": "rotate-tr 60s linear infinite both",
-        "rotate-tr-rev": "rotate-tr 70s linear infinite both reverse",
-        "rotate-tr-rev2": "rotate-tr 90s linear infinite both reverse",
+        "bubble-1": "bubble-float-1 8s ease-in-out infinite",
+        "bubble-2": "bubble-float-2 12s ease-in-out infinite 2s",
+        "bubble-3": "bubble-float-3 10s ease-in-out infinite 4s",
       },
     },
   },
