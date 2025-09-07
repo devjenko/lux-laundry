@@ -51,48 +51,59 @@
 }
 
 /* Bubble animations - consistent medium screen behavior for all screen sizes */
+/* Left side bubble animations */
 @keyframes bubble-peek-left {
   0% {
-    transform: translate(-50%, -50%) translateX(25px) translateY(0px) rotate(0deg) scale(0.6);
+    transform: translate(-50%, -50%) translateX(5px) translateY(0px)
+      rotate(0deg) scale(0.6);
     opacity: 0.18;
   }
   25% {
-    transform: translate(-50%, -50%) translateX(-70px) translateY(-15px) rotate(90deg) scale(1.5);
+    transform: translate(-50%, -50%) translateX(-30px) translateY(-15px)
+      rotate(90deg) scale(1.5);
     opacity: 1;
   }
   50% {
-    transform: translate(-50%, -50%) translateX(-85px) translateY(12px) rotate(180deg) scale(1.65);
+    transform: translate(-50%, -50%) translateX(-35px) translateY(12px)
+      rotate(180deg) scale(1.65);
     opacity: 0.9;
   }
   75% {
-    transform: translate(-50%, -50%) translateX(-75px) translateY(-8px) rotate(270deg) scale(1.4);
+    transform: translate(-50%, -50%) translateX(-25px) translateY(-8px)
+      rotate(270deg) scale(1.4);
     opacity: 0.8;
   }
   100% {
-    transform: translate(-50%, -50%) translateX(25px) translateY(0px) rotate(360deg) scale(0.6);
+    transform: translate(-50%, -50%) translateX(5px) translateY(0px)
+      rotate(360deg) scale(0.6);
     opacity: 0.18;
   }
 }
-
+/* Right side bubble animations */
 @keyframes bubble-peek-right {
   0% {
-    transform: translate(50%, -50%) translateX(-25px) translateY(0px) rotate(0deg) scale(0.65);
+    transform: translate(50%, -50%) translateX(-5px) translateY(0px)
+      rotate(0deg) scale(0.65);
     opacity: 0.2;
   }
   25% {
-    transform: translate(50%, -50%) translateX(75px) translateY(-18px) rotate(-90deg) scale(1.55);
+    transform: translate(50%, -50%) translateX(25px) translateY(-18px)
+      rotate(-90deg) scale(1.55);
     opacity: 1;
   }
   50% {
-    transform: translate(50%, -50%) translateX(90px) translateY(15px) rotate(-180deg) scale(1.7);
+    transform: translate(50%, -50%) translateX(20px) translateY(15px)
+      rotate(-180deg) scale(1.7);
     opacity: 0.85;
   }
   75% {
-    transform: translate(50%, -50%) translateX(80px) translateY(-10px) rotate(-270deg) scale(1.45);
+    transform: translate(50%, -50%) translateX(20px) translateY(-10px)
+      rotate(-270deg) scale(1.45);
     opacity: 0.75;
   }
   100% {
-    transform: translate(50%, -50%) translateX(-25px) translateY(0px) rotate(-360deg) scale(0.65);
+    transform: translate(50%, -50%) translateX(-5px) translateY(0px)
+      rotate(-360deg) scale(0.65);
     opacity: 0.2;
   }
 }
@@ -101,46 +112,56 @@
 @media (min-width: 1024px) {
   @keyframes bubble-peek-left {
     0% {
-      transform: translate(-50%, -50%) translateX(30px) translateY(0px) rotate(0deg) scale(0.6);
+      transform: translate(-50%, -50%) translateX(20px) translateY(0px)
+        rotate(0deg) scale(0.6);
       opacity: 0.18;
     }
     25% {
-      transform: translate(-50%, -50%) translateX(-95px) translateY(-15px) rotate(90deg) scale(1.5);
+      transform: translate(-50%, -50%) translateX(-85px) translateY(-15px)
+        rotate(90deg) scale(1.5);
       opacity: 1;
     }
     50% {
-      transform: translate(-50%, -50%) translateX(-110px) translateY(12px) rotate(180deg) scale(1.65);
+      transform: translate(-50%, -50%) translateX(-100px) translateY(12px)
+        rotate(180deg) scale(1.65);
       opacity: 0.9;
     }
     75% {
-      transform: translate(-50%, -50%) translateX(-100px) translateY(-8px) rotate(270deg) scale(1.4);
+      transform: translate(-50%, -50%) translateX(-90px) translateY(-8px)
+        rotate(270deg) scale(1.4);
       opacity: 0.8;
     }
     100% {
-      transform: translate(-50%, -50%) translateX(30px) translateY(0px) rotate(360deg) scale(0.6);
+      transform: translate(-50%, -50%) translateX(20px) translateY(0px)
+        rotate(360deg) scale(0.6);
       opacity: 0.18;
     }
   }
 
   @keyframes bubble-peek-right {
     0% {
-      transform: translate(50%, -50%) translateX(-30px) translateY(0px) rotate(0deg) scale(0.65);
+      transform: translate(50%, -50%) translateX(-20px) translateY(0px)
+        rotate(0deg) scale(0.65);
       opacity: 0.2;
     }
     25% {
-      transform: translate(50%, -50%) translateX(100px) translateY(-18px) rotate(-90deg) scale(1.55);
+      transform: translate(50%, -50%) translateX(90px) translateY(-18px)
+        rotate(-90deg) scale(1.55);
       opacity: 1;
     }
     50% {
-      transform: translate(50%, -50%) translateX(115px) translateY(15px) rotate(-180deg) scale(1.7);
+      transform: translate(50%, -50%) translateX(105px) translateY(15px)
+        rotate(-180deg) scale(1.7);
       opacity: 0.85;
     }
     75% {
-      transform: translate(50%, -50%) translateX(105px) translateY(-10px) rotate(-270deg) scale(1.45);
+      transform: translate(50%, -50%) translateX(95px) translateY(-10px)
+        rotate(-270deg) scale(1.45);
       opacity: 0.75;
     }
     100% {
-      transform: translate(50%, -50%) translateX(-30px) translateY(0px) rotate(-360deg) scale(0.65);
+      transform: translate(50%, -50%) translateX(-20px) translateY(0px)
+        rotate(-360deg) scale(0.65);
       opacity: 0.2;
     }
   }
@@ -148,10 +169,9 @@
 
 /* Apply bubble animations */
 .animate-bubble-peek-left {
-  animation: bubble-peek-left 12s linear infinite;
+  animation: bubble-peek-left 18s linear infinite;
 }
 
 .animate-bubble-peek-right {
-  animation: bubble-peek-right 14s linear infinite;
+  animation: bubble-peek-right 18s linear infinite;
 }
-
