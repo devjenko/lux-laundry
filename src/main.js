@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const headerHeight = header ? header.offsetHeight : 0;
 
             // Calculate position with offset
-            const targetPosition = targetSection.offsetTop - headerHeight - 20; // 20px extra padding
+            const targetPosition = targetSection.offsetTop - headerHeight;
 
             // Smooth scroll to position
             window.scrollTo({
