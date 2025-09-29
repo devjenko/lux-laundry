@@ -36,6 +36,8 @@
       href="https://fonts.googleapis.com/css2?family=Rasa:ital,wght@0,300..700;1,300..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/node_modules/@hellouxpavel/cssanimation/dist/cssanimation.css">
+
 
     <title>Lux Laundry™</title>
   </head>
@@ -44,10 +46,10 @@
       <!-- Navbar -->
       <nav
         id="navbar"
-        class="opacity-[99%] bg-white lg:bg-neutral shadow-sm lg:shadow-none border-gray-200 px-6 py-4 lg:py-6 xl:py-8 transform transition-all ease-in-out duration-115"
+        class=" opacity-[99%] bg-white lg:bg-neutral shadow-sm lg:shadow-none border-gray-200 px-6 py-4 lg:py-6 xl:py-8 transform transition-all ease-in-out duration-115"
       >
         <div
-          class="container mx-auto max-w-7xl flex flex-wrap items-center justify-between"
+          class="cssanimation ca__fx-blurInFromTop container mx-auto max-w-7xl flex flex-wrap items-center justify-between"
         >
           <!-- Nav Logo-->
           <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -132,14 +134,14 @@
     <main>
       <!-- Hero -->
       <section
-        class="bg-neutral text-center lg:text-start py-12 lg:py-20 xl:py-24 px-6"
+        class=" bg-neutral text-center lg:text-start py-12 lg:py-20 xl:py-24 px-6"
       >
-        <div class="container mx-auto max-w-7xl">
+        <div class=" container mx-auto max-w-7xl">
           <div
             class="grid justify-center items-center gap-12 lg:gap-16 xl:gap-20 lg:grid-cols-2"
           >
             <!-- Hero text container -->
-            <div class="lg:col-span-1 justify-self-start">
+            <div class=" cssanimation ca__fx-blurInfromLeft  lg:col-span-1 justify-self-start">
               <!--Announcement banner -->
               <a
                 href="#contact"
@@ -216,12 +218,15 @@
             </div>
             <!--Hero image container-->
             <div
-              class="relative flex justify-center lg:justify-self-end items-center mt-14 lg:m-0 object-cover object-center lg:col-span-1"
+              class="cssanimation ca__fx-blurInFromRight Reveal relative flex justify-center lg:justify-self-end items-center mt-14 lg:m-0 object-cover object-center lg:col-span-1"
             >
               <img
-                class="xl:w-[350px] w-[300px] z-10 relative"
+                class="xl:w-[350px] w-[300px] z-10 relative cssanimation ca__fx-quiver"
                 src="src/assets/images/hero/washing-machine.png"
                 alt="A washing machine"
+                data-triggle="scroll" 
+                data-triggle-scroll="true" 
+                data-triggle-reset="true"
               />
 
               <!-- Bubble 1 -->
@@ -311,11 +316,11 @@
 
           <!--Card grid-->
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-12"
+            class=" grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-12"
           >
             <!--Card-->
             <div
-              class="text-center bg-white w-full mx-auto justify-center items-center rounded-[20px] p-6 lg:p-8"
+              class=" text-center bg-white w-full mx-auto justify-center items-center rounded-[20px] p-6 lg:p-8"
             >
               <p
                 class="font-grandstander text-xsmall md:text-small xl:text-base text-accent font-regular mb-2"
@@ -336,7 +341,8 @@
 
             <!--Card-->
             <div
-              class="text-center bg-white w-full mx-auto justify-center items-center rounded-[20px] p-6 lg:p-8"
+              class=" text-center bg-white w-full mx-auto justify-center items-center rounded-[20px] p-6 lg:p-8"
+              data-aos="fade-up"
             >
               <p
                 class="font-grandstander text-xsmall md:text-small xl:text-base text-accent font-regular mb-2"
@@ -357,7 +363,7 @@
 
             <!--Card-->
             <div
-              class="text-center bg-white w-full mx-auto justify-center items-center rounded-[20px] p-6 lg:p-8"
+              class=" text-center bg-white w-full mx-auto justify-center items-center rounded-[20px] p-6 lg:p-8"
             >
               <p
                 class="font-grandstander text-xsmall md:text-small xl:text-base text-accent font-regular mb-2"
@@ -378,7 +384,8 @@
 
             <!--Card-->
             <div
-              class="text-center bg-white w-full mx-auto justify-center items-center rounded-[20px] p-6 lg:p-8"
+              class="  text-center bg-white w-full mx-auto justify-center items-center rounded-[20px] p-6 lg:p-8"
+              
             >
               <p
                 class="font-grandstander text-xsmall md:text-small xl:text-base text-accent font-regular mb-2"

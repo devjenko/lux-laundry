@@ -1,13 +1,15 @@
 import "flowbite";
-import { initTWE, Collapse } from "tw-elements";
+
+
+
+
+
 
 // Initialize components after DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize Tailwind Elements
-  initTWE({ Collapse });
 
-  // Flowbite is automatically initialized, but you can manually reinitialize if needed
-  // window.initFlowbite();
+
+
 
   // Custom hamburger menu toggle
   const burgerButton = document.getElementById("mobile-menu-button");
