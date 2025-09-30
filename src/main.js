@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
     delay: 0
   });
 
-
-
   // Custom hamburger menu toggle
   const burgerButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("navbar-default");
@@ -95,11 +93,11 @@ document.addEventListener("DOMContentLoaded", function () {
             // Get header height for offset
             const header = document.querySelector("header");
             const headerHeight = header ? header.offsetHeight : 0;
-            
+
             // Add extra offset for services section
             let extraOffset = 0;
             if (targetId === 'services') {
-              extraOffset = window.innerWidth >= 1024 ? 50 : -25; // Negative offset to scroll less
+              extraOffset = window.innerWidth >= 1024 ? 50 : -25;
             }
 
             // Calculate position with offset
@@ -123,116 +121,97 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-});
 
-// Theme toggle functionality (only if elements exist)
-var themeToggleBtn = document.getElementById("theme-toggle");
-var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
-var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+  // Theme toggle functionality (only if elements exist)
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+  const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
 
-// Only run theme toggle code if all elements exist
-if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
-  // Change the icons inside the button based on previous settings
-  if (
-    localStorage.getItem("color-theme") === "dark" ||
-    (!("color-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    themeToggleLightIcon.classList.remove("hidden");
-  } else {
-    themeToggleDarkIcon.classList.remove("hidden");
+  if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
+    // Change the icons inside the button based on previous settings
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      themeToggleLightIcon.classList.remove("hidden");
+    } else {
+      themeToggleDarkIcon.classList.remove("hidden");
+    }
+
+    themeToggleBtn.addEventListener("click", function () {
+      // toggle icons inside button
+      themeToggleDarkIcon.classList.toggle("hidden");
+      themeToggleLightIcon.classList.toggle("hidden");
+
+      if (localStorage.getItem("color-theme")) {
+        if (localStorage.getItem("color-theme") === "light") {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        }
+      } else {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        }
+      }
+    });
   }
 
-  themeToggleBtn.addEventListener("click", function () {
-    // toggle icons inside button
-    themeToggleDarkIcon.classList.toggle("hidden");
-    themeToggleLightIcon.classList.toggle("hidden");
-
-    // if set via local storage previously
-    if (localStorage.getItem("color-theme")) {
-      if (localStorage.getItem("color-theme") === "light") {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("color-theme", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("color-theme", "light");
-      }
-
-      // if NOT set via local storage previously
-    } else {
-      if (document.documentElement.classList.contains("dark")) {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("color-theme", "light");
-      } else {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("color-theme", "dark");
-      }
-    }
-  });
-}
-
-// Navbar scroll behavior
-document.addEventListener("DOMContentLoaded", function () {
+  // Navbar scroll behavior
   const navBar = document.getElementById("navbar");
-  const mobileMenu = document.getElementById("navbar-default");
+  
   let lastScrollY = window.scrollY;
   let isScrolling = false;
 
-  // Check if screen is smaller than lg breakpoint (1024px)
   const isSmallScreen = () => window.matchMedia("(max-width: 1023px)").matches;
 
   function updateNavbar() {
     const currentScrollY = window.scrollY;
     const isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains("open");
-    const scrollDelta = currentScrollY - lastScrollY;
 
-    // Desktop color change
-    if (!isSmallScreen()) {
-      if (currentScrollY > 30) {
-        navBar.classList.remove("lg:bg-neutral", "opacity-[99%]", "lg:shadow-none", "xl:pt-10");
-        navBar.classList.add("bg-white");
-      } else {
-        navBar.classList.add("lg:bg-neutral", "opacity-[99%]", "lg:shadow-none", "xl:pt-10");
-        navBar.classList.remove("bg-white");
-      }
-      // Remove any transform classes that might be left from mobile view
-      navBar.classList.remove("-translate-y-full");
-      return;
+    // ✅ Background + shadow toggle
+    if (currentScrollY > 0) {
+      navBar.classList.remove("bg-neutral");
+      navBar.classList.add("bg-white", "shadow-sm");
+    } else {
+      navBar.classList.remove("bg-white", "shadow-sm");
+      navBar.classList.add("bg-neutral");
     }
 
-    // Add a small threshold for scroll sensitivity
-    if (Math.abs(scrollDelta) < 5) {
-      isScrolling = false;
-      return;
-    }
-
-    // Mobile scroll behavior
+    // ✅ Hide/show on mobile scroll
     if (isSmallScreen() && !isMobileMenuOpen) {
-      // Scrolling down & past threshold
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         navBar.classList.add("-translate-y-full");
-      } 
-      // Scrolling up or at top
-      else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
+      } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
         navBar.classList.remove("-translate-y-full");
       }
+    } else {
+      // Reset transforms on desktop
+      navBar.classList.remove("-translate-y-full");
     }
 
     lastScrollY = currentScrollY;
     isScrolling = false;
   }
 
-  // Handle scroll events with throttling
-  window.addEventListener("scroll", function() {
+  // ✅ Throttled scroll listener
+  window.addEventListener("scroll", function () {
     if (!isScrolling) {
       window.requestAnimationFrame(updateNavbar);
       isScrolling = true;
     }
   });
 
-  // Handle resize events
+  // ✅ On resize, also update
   window.addEventListener("resize", updateNavbar);
 
-  // Initial check
+  // ✅ Run once on page load (handles refresh-in-middle issue)
   updateNavbar();
 });
