@@ -53,6 +53,47 @@ export default {
       },
 
       keyframes: {
+        "blur-in-from-left": {
+          "0%": { 
+            opacity: "0",
+            filter: "blur(10px)",
+            transform: "translateX(-100%)"
+          },
+          "100%": {
+            opacity: "1",
+            filter: "blur(0)",
+            transform: "translateX(0)"
+          }
+        },
+        "blur-in-from-right": {
+          "0%": { 
+            opacity: "0",
+            filter: "blur(10px)",
+            transform: "translateX(100%)"
+          },
+          "100%": {
+            opacity: "1",
+            filter: "blur(0)",
+            transform: "translateX(0)"
+          }
+        },
+        "blur-in-from-top": {
+          "0%": { 
+            opacity: "0",
+            filter: "blur(10px)",
+            transform: "translateY(-100%)"
+          },
+          "100%": {
+            opacity: "1",
+            filter: "blur(0)",
+            transform: "translateY(0)"
+          }
+        },
+        "quiver": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "25%": { transform: "translateY(-2px)" },
+          "75%": { transform: "translateY(2px)" }
+        },
         "bubble-float-1": {
           "0%": { 
             transform: "translateY(0px) translateX(-30px) rotate(0deg) scale(1)"
@@ -106,6 +147,10 @@ export default {
         }
       },
       animation: {
+        "blur-in-from-left": "blur-in-from-left 1s ease-out forwards",
+        "blur-in-from-right": "blur-in-from-right 1s ease-out forwards",
+        "blur-in-from-top": "blur-in-from-top 1s ease-out forwards",
+        "quiver": "quiver 2s ease-in-out infinite",
         "bubble-1": "bubble-float-1 8s ease-in-out infinite",
         "bubble-2": "bubble-float-2 12s ease-in-out infinite 2s",
         "bubble-3": "bubble-float-3 10s ease-in-out infinite 4s",
