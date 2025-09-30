@@ -84,9 +84,15 @@ document.addEventListener("DOMContentLoaded", function () {
             // Get header height for offset
             const header = document.querySelector("header");
             const headerHeight = header ? header.offsetHeight : 0;
+            
+            // Add extra offset for services section
+            let extraOffset = 0;
+            if (targetId === 'services') {
+              extraOffset = window.innerWidth >= 1024 ? 50 : -25; // Negative offset to scroll less
+            }
 
             // Calculate position with offset
-            const targetPosition = targetSection.offsetTop - headerHeight;
+            const targetPosition = targetSection.offsetTop - headerHeight + extraOffset;
 
             // Smooth scroll to position
             window.scrollTo({
