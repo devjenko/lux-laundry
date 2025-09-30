@@ -26,6 +26,11 @@
     @apply font-semiBold;
     @apply transition-all duration-150 ease-in-out;
   }
+
+  /* Smooth navbar transitions */
+  #navbar {
+    @apply transform transition-transform duration-500 ease-out;
+  }
 }
 
 /* Hamburger menu cross animation */

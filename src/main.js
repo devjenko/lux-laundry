@@ -171,28 +171,68 @@ if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
   });
 }
 
-// Navbar color change on scroll
+// Navbar scroll behavior
 document.addEventListener("DOMContentLoaded", function () {
   const navBar = document.getElementById("navbar");
   const mobileMenu = document.getElementById("navbar-default");
+  let lastScrollY = window.scrollY;
+  let isScrolling = false;
+
+  // Check if screen is smaller than lg breakpoint (1024px)
+  const isSmallScreen = () => window.matchMedia("(max-width: 1023px)").matches;
 
   function updateNavbar() {
-    // Change the background color of the nav to white when scrolling down
-    if (window.scrollY > 30) {
-      navBar.classList.remove("lg:bg-neutral", "opacity-[99%]", "lg:shadow-none", "xl:pt-10");
-      navBar.classList.add("bg-white");
-    } else {
-      // Reset to original state at the top of the page
-      navBar.classList.add("lg:bg-neutral", "opacity-[99%]", "lg:shadow-none", "xl:pt-10");
-      navBar.classList.remove("bg-white");
+    const currentScrollY = window.scrollY;
+    const isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains("open");
+    const scrollDelta = currentScrollY - lastScrollY;
+
+    // Desktop color change
+    if (!isSmallScreen()) {
+      if (currentScrollY > 30) {
+        navBar.classList.remove("lg:bg-neutral", "opacity-[99%]", "lg:shadow-none", "xl:pt-10");
+        navBar.classList.add("bg-white");
+      } else {
+        navBar.classList.add("lg:bg-neutral", "opacity-[99%]", "lg:shadow-none", "xl:pt-10");
+        navBar.classList.remove("bg-white");
+      }
+      // Remove any transform classes that might be left from mobile view
+      navBar.classList.remove("-translate-y-full");
+      return;
     }
+
+    // Add a small threshold for scroll sensitivity
+    if (Math.abs(scrollDelta) < 5) {
+      isScrolling = false;
+      return;
+    }
+
+    // Mobile scroll behavior
+    if (isSmallScreen() && !isMobileMenuOpen) {
+      // Scrolling down & past threshold
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        navBar.classList.add("-translate-y-full");
+      } 
+      // Scrolling up or at top
+      else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
+        navBar.classList.remove("-translate-y-full");
+      }
+    }
+
+    lastScrollY = currentScrollY;
+    isScrolling = false;
   }
+
+  // Handle scroll events with throttling
+  window.addEventListener("scroll", function() {
+    if (!isScrolling) {
+      window.requestAnimationFrame(updateNavbar);
+      isScrolling = true;
+    }
+  });
+
+  // Handle resize events
+  window.addEventListener("resize", updateNavbar);
 
   // Initial check
   updateNavbar();
-
-  // Update on scroll
-  window.addEventListener("scroll", function() {
-    requestAnimationFrame(updateNavbar);
-  });
 });
