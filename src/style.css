@@ -3,6 +3,25 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Grandstander Variable';
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Inter Variable';
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Outfit Variable';
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Rasa Variable';
+    font-display: swap;
+  }
+}
+
+@layer base {
   ul li a:hover {
     @apply font-semiBold;
     @apply transition-all duration-150 ease-in-out;

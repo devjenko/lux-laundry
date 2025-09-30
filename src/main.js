@@ -3,6 +3,12 @@ import './animations';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+// Import fonts
+import '@fontsource-variable/grandstander';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/outfit';
+import '@fontsource-variable/rasa';
+
 // Initialize components after DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize AOS with options
@@ -165,95 +171,28 @@ if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
   });
 }
 
-// Nav exit and appear animation when scrolling - Small screens only
+// Navbar color change on scroll
 document.addEventListener("DOMContentLoaded", function () {
   const navBar = document.getElementById("navbar");
   const mobileMenu = document.getElementById("navbar-default");
 
-  let lastScrollY = window.scrollY;
-  let ticking = false;
-
-  // Check if screen is smaller than lg breakpoint (1024px)
-  const isSmallScreen = () => {
-    return window.matchMedia("(max-width: 1023px)").matches;
-  };
-
   function updateNavbar() {
-    // Only run on small screens
-    if (isSmallScreen()) {
+    // Change the background color of the nav to white when scrolling down
+    if (window.scrollY > 30) {
+      navBar.classList.remove("lg:bg-neutral", "opacity-[99%]", "lg:shadow-none", "xl:pt-10");
       navBar.classList.add("bg-white");
     } else {
-      // On large screens, ensure navbar is visible and has proper background
-      navBar.classList.remove("-translate-y-full");
+      // Reset to original state at the top of the page
+      navBar.classList.add("lg:bg-neutral", "opacity-[99%]", "lg:shadow-none", "xl:pt-10");
       navBar.classList.remove("bg-white");
-      navBar.classList.add("bg-neutral");
-
-      // Change the background color of the nav to white when scrolling down and back to neutral at the top of the page
-      if (window.scrollY > 30) {
-        navBar.classList.remove(
-          "lg:bg-neutral",
-          "opacity-[99%]",
-          "lg:shadow-none",
-          "xl:pt-10"
-        );
-        navBar.classList.add("bg-white");
-      } else {
-        navBar.classList.add("lg:shadow-none", "xl:pt-10");
-      }
-      ticking = false;
-      return;
     }
-
-    const currentScrollY = window.scrollY;
-
-    // Check if mobile menu is open (has 'open' class)
-    const isMobileMenuOpen =
-      mobileMenu && mobileMenu.classList.contains("open");
-
-    // Don't hide navbar if mobile menu is open
-    if (isMobileMenuOpen) {
-      lastScrollY = currentScrollY;
-      ticking = false;
-      return;
-    }
-
-    // Only hide navbar when scrolling down and past a certain threshold. For smaller screen sizes only
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      // Scrolling down - hide navbar
-      navBar.classList.add("-translate-y-full");
-    } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
-      // Scrolling up or at top - show navbar
-      navBar.classList.remove("-translate-y-full");
-    }
-
-    lastScrollY = currentScrollY;
-    ticking = false;
   }
-
-  window.addEventListener("scroll", function () {
-    if (!ticking) {
-      requestAnimationFrame(updateNavbar);
-      ticking = true;
-    }
-  });
-
-  // Handle screen size changes
-  window.addEventListener("resize", function () {
-    if (!isSmallScreen()) {
-      // Reset navbar state for large screens
-      navBar.classList.remove("-translate-y-full");
-    }
-  });
 
   // Initial check
-  if (!isSmallScreen()) {
-    navBar.classList.remove("-translate-y-full");
-  }
-});
+  updateNavbar();
 
-window.addEventListener("scroll", function () {
-  if (!ticking) {
+  // Update on scroll
+  window.addEventListener("scroll", function() {
     requestAnimationFrame(updateNavbar);
-    ticking = true;
-  }
+  });
 });

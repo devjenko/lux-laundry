@@ -46,10 +46,10 @@ export default {
         bold: "600",
       },
       fontFamily: {
-        grandstander: ["grandstander", "sans-serif"],
-        inter: ["inter", "sans-serif"],
-        outfit: ["outfit", "sans-serif"],
-        rasa: ["rasa", "sans-serif"],
+        grandstander: ["'Grandstander Variable'", "sans-serif"],
+        inter: ["'Inter Variable'", "sans-serif"],
+        outfit: ["'Outfit Variable'", "sans-serif"],
+        rasa: ["'Rasa Variable'", "sans-serif"],
       },
 
       keyframes: {
