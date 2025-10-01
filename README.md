@@ -138,7 +138,6 @@ Contributions are what make the open source community such an amazing place to l
 
 - [Heroicons](https://heroicons.com/) for beautiful icons
 - [Flowbite](https://flowbite.com/) for UI components
-- [TW Elements](https://tw-elements.com/) for animations
 - [Tailwind CSS](https://tailwindcss.com/) for styling framework
 
 ---
