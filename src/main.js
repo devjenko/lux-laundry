@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   AOS.init({
     duration: 800,
     easing: 'ease-out-cubic',
-    once: false,
+    once: true,
     offset: 100,
     delay: 0
   });
