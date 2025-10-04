@@ -14,7 +14,7 @@ export default {
         // light blue
         secondary: "#D0F6FF",
         // bright light blue
-        accent: "#21B7E2",
+        accent: "#199CC6",
         // white
         neutral: "#F7FEFF",
         //grey
@@ -54,103 +54,118 @@ export default {
 
       keyframes: {
         "blur-in-from-left": {
-          "0%": { 
+          "0%": {
             opacity: "0",
             filter: "blur(10px)",
-            transform: "translateX(-100%)"
+            transform: "translateX(-100%)",
           },
           "100%": {
             opacity: "1",
             filter: "blur(0)",
-            transform: "translateX(0)"
-          }
+            transform: "translateX(0)",
+          },
         },
         "blur-in-from-right": {
-          "0%": { 
+          "0%": {
             opacity: "0",
             filter: "blur(10px)",
-            transform: "translateX(100%)"
+            transform: "translateX(100%)",
           },
           "100%": {
             opacity: "1",
             filter: "blur(0)",
-            transform: "translateX(0)"
-          }
+            transform: "translateX(0)",
+          },
         },
         "blur-in-from-top": {
-          "0%": { 
+          "0%": {
             opacity: "0",
             filter: "blur(10px)",
-            transform: "translateY(-100%)"
+            transform: "translateY(-100%)",
           },
           "100%": {
             opacity: "1",
             filter: "blur(0)",
-            transform: "translateY(0)"
-          }
+            transform: "translateY(0)",
+          },
         },
-        "quiver": {
+        quiver: {
           "0%, 100%": { transform: "translateY(0)" },
           "25%": { transform: "translateY(-2px)" },
-          "75%": { transform: "translateY(2px)" }
+          "75%": { transform: "translateY(2px)" },
         },
         "bubble-float-1": {
-          "0%": { 
-            transform: "translateY(0px) translateX(-30px) rotate(0deg) scale(1)"
+          "0%": {
+            transform:
+              "translateY(0px) translateX(-30px) rotate(0deg) scale(1)",
           },
           "25%": {
-            transform: "translateY(-40px) translateX(50px) rotate(90deg) scale(1.1)"
+            transform:
+              "translateY(-40px) translateX(50px) rotate(90deg) scale(1.1)",
           },
           "50%": {
-            transform: "translateY(-80px) translateX(-20px) rotate(180deg) scale(0.9)"
+            transform:
+              "translateY(-80px) translateX(-20px) rotate(180deg) scale(0.9)",
           },
           "75%": {
-            transform: "translateY(-40px) translateX(70px) rotate(270deg) scale(1.05)"
+            transform:
+              "translateY(-40px) translateX(70px) rotate(270deg) scale(1.05)",
           },
           "100%": {
-            transform: "translateY(0px) translateX(-30px) rotate(360deg) scale(1)"
-          }
+            transform:
+              "translateY(0px) translateX(-30px) rotate(360deg) scale(1)",
+          },
         },
         "bubble-float-2": {
-          "0%": { 
-            transform: "translateY(20px) translateX(60px) rotate(0deg) scale(0.8)"
+          "0%": {
+            transform:
+              "translateY(20px) translateX(60px) rotate(0deg) scale(0.8)",
           },
           "33%": {
-            transform: "translateY(-50px) translateX(-40px) rotate(120deg) scale(1.2)"
+            transform:
+              "translateY(-50px) translateX(-40px) rotate(120deg) scale(1.2)",
           },
           "66%": {
-            transform: "translateY(-20px) translateX(80px) rotate(240deg) scale(0.9)"
+            transform:
+              "translateY(-20px) translateX(80px) rotate(240deg) scale(0.9)",
           },
           "100%": {
-            transform: "translateY(20px) translateX(60px) rotate(360deg) scale(0.8)"
-          }
+            transform:
+              "translateY(20px) translateX(60px) rotate(360deg) scale(0.8)",
+          },
         },
         "bubble-float-3": {
-          "0%": { 
-            transform: "translateY(-10px) translateX(-50px) rotate(0deg) scale(1.1)"
+          "0%": {
+            transform:
+              "translateY(-10px) translateX(-50px) rotate(0deg) scale(1.1)",
           },
           "20%": {
-            transform: "translateY(-60px) translateX(30px) rotate(72deg) scale(0.85)"
+            transform:
+              "translateY(-60px) translateX(30px) rotate(72deg) scale(0.85)",
           },
           "40%": {
-            transform: "translateY(-100px) translateX(-30px) rotate(144deg) scale(1.15)"
+            transform:
+              "translateY(-100px) translateX(-30px) rotate(144deg) scale(1.15)",
           },
           "60%": {
-            transform: "translateY(-50px) translateX(90px) rotate(216deg) scale(0.95)"
+            transform:
+              "translateY(-50px) translateX(90px) rotate(216deg) scale(0.95)",
           },
           "80%": {
-            transform: "translateY(-20px) translateX(-20px) rotate(288deg) scale(1.05)"
+            transform:
+              "translateY(-20px) translateX(-20px) rotate(288deg) scale(1.05)",
           },
           "100%": {
-            transform: "translateY(-10px) translateX(-50px) rotate(360deg) scale(1.1)"
-          }
-        }
+            transform:
+              "translateY(-10px) translateX(-50px) rotate(360deg) scale(1.1)",
+          },
+        },
       },
       animation: {
         "blur-in-from-left": "blur-in-from-left 1s ease-out forwards",
         "blur-in-from-right": "blur-in-from-right 1s ease-out forwards",
         "blur-in-from-top": "blur-in-from-top 1s ease-out forwards",
-        "quiver": "quiver 2s ease-in-out infinite",
+        quiver: "quiver 2s ease-in-out infinite",
         "bubble-1": "bubble-float-1 8s ease-in-out infinite",
         "bubble-2": "bubble-float-2 12s ease-in-out infinite 2s",
         "bubble-3": "bubble-float-3 10s ease-in-out infinite 4s",
