@@ -1,23 +1,23 @@
 import "flowbite";
-import './animations';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "./animations";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Import fonts
-import '@fontsource-variable/grandstander';
-import '@fontsource-variable/inter';
-import '@fontsource-variable/outfit';
-import '@fontsource-variable/rasa';
+import "@fontsource-variable/grandstander";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/outfit";
+import "@fontsource-variable/rasa";
 
 // Initialize components after DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize AOS with options
   AOS.init({
     duration: 800,
-    easing: 'ease-out-cubic',
+    easing: "ease-out-cubic",
     once: true,
     offset: 100,
-    delay: 0
+    delay: 0,
   });
 
   // Custom hamburger menu toggle
@@ -96,12 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Add extra offset for services section
             let extraOffset = 0;
-            if (targetId === 'services') {
+            if (targetId === "services") {
               extraOffset = window.innerWidth >= 1024 ? 50 : -25;
             }
 
             // Calculate position with offset
-            const targetPosition = targetSection.offsetTop - headerHeight + extraOffset;
+            const targetPosition =
+              targetSection.offsetTop - headerHeight + extraOffset;
 
             // Smooth scroll to position
             window.scrollTo({
@@ -125,7 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Theme toggle functionality (only if elements exist)
   const themeToggleBtn = document.getElementById("theme-toggle");
   const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
-  const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+  const themeToggleLightIcon = document.getElementById(
+    "theme-toggle-light-icon"
+  );
 
   if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
     // Change the icons inside the button based on previous settings
@@ -166,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Navbar scroll behavior
   const navBar = document.getElementById("navbar");
-  
+
   let lastScrollY = window.scrollY;
   let isScrolling = false;
 
@@ -174,7 +177,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateNavbar() {
     const currentScrollY = window.scrollY;
-    const isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains("open");
+    const isMobileMenuOpen =
+      mobileMenu && mobileMenu.classList.contains("open");
 
     // ✅ Background + shadow toggle
     if (currentScrollY > 0) {
@@ -208,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
       isScrolling = true;
     }
   });
+
 
   // ✅ On resize, also update
   window.addEventListener("resize", updateNavbar);

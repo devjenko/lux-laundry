@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="scroll-smooth overflow-x-hidden" lang="en">
+<html id="html" class="scroll-smooth overflow-x-hidden" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -95,6 +95,7 @@
               <li>
                 <a
                   href="#location"
+                  onclick="openLocationModal()"
                   class="block py-2 px-3 rounded-sm hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0"
                   >Location</a
                 >
@@ -810,6 +811,22 @@
           </div>
         </div>
       </section>
+
+      <!-- Location Modal -->
+      <div
+        id="locationModal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-50 hidden"
+      >
+        <p class="z-51 text-white">Click outside of the map to close it.</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125075.71620272267!2d104.80778671296422!3d11.579352598718401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513dc76a6be3%3A0x9c010ee85ab525bb!2sPhnom%20Penh!5e0!3m2!1sen!2skh!4v1759645908351!5m2!1sen!2skh"
+          class="w-full h-full max-w-4xl max-h-[600px] rounded-lg shadow-lg z-50"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
 
       <!--Final CTA Section-->
       <section class="py-12 lg:py-20 xl:py-24 px-6">
