@@ -57,23 +57,25 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 ### Installation
 
-1. **Clone the repository**
+1. **Fork the repository**
+
+2. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/lux-laundry.git
    cd lux-laundry
    ```
 
-2. **Install dependencies**
+3. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Start development server**
+4. **Start development server**
    ```bash
    npm run dev
    ```
 
-4. **Open your browser**
+5. **Open your browser**
    Navigate to `http://localhost:3000` to view the site
 
 ## 📂 Project Structure
